@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Mnkuu 💗</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins,sans-serif;
+background:linear-gradient(135deg,#ff9bb3,#ffc0cb);
+color:white;
+text-align:center;
+overflow:hidden;
+}
+
+/* slides */
+
+.slide{
+display:none;
+height:100vh;
+padding:40px;
+box-sizing:border-box;
+position:relative;
+}
+
+.active{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{opacity:0}
+to{opacity:1}
+}
+
+/* text */
+
+.text{
+font-size:38px;
+max-width:750px;
+line-height:1.6;
+text-shadow:0 0 10px white;
+}
+
+/* heart button */
+
+button{
+font-size:45px;
+border:none;
+background:none;
+cursor:pointer;
+margin-top:40px;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.25)}
+100%{transform:scale(1)}
+}
+
+/* floating hearts */
+
+.heart{
+position:absolute;
+color:white;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh)}
+100%{transform:translateY(-10vh)}
+}
+
+/* glitter */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+pointer-events:none;
+}
+
+/* final text */
+
+.final{
+font-size:65px;
+color:#ff0055;
+text-shadow:0 0 20px white;
+margin-bottom:20px;
+}
+
+/* image */
+
+img{
+max-width:320px;
+border-radius:25px;
+box-shadow:0 0 20px pink;
+}
+
+/* names glow */
+
+.names{
+font-size:45px;
+margin-top:20px;
+color:white;
+text-shadow:0 0 20px #ff0077;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px white}
+to{text-shadow:0 0 25px #ff0077}
+}
+
+/* rose petals */
+
+.petal{
+position:fixed;
+top:-10px;
+color:#ff4d6d;
+font-size:22px;
+animation:fall 6s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10px) rotate(0)}
+100%{transform:translateY(100vh) rotate(360deg)}
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="glitter"></canvas>
+
+<audio autoplay loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="slide active">
+<div class="text" id="t1"></div>
+<button onclick="next()">❤️</button>
+</div>
+
+<div class="slide">
+<div class="text" id="t2"></div>
+<button onclick="next()">❤️</button>
+</div>
+
+<div class="slide">
+<div class="text" id="t3"></div>
+<button onclick="next()">❤️</button>
+</div>
+
+<div class="slide">
+<div class="text" id="t4"></div>
+<button onclick="next()">❤️</button>
+</div>
+
+<div class="slide">
+<div class="text" id="t5"></div>
+<button onclick="next()">❤️</button>
+</div>
+
+<div class="slide">
+<div class="text" id="t6"></div>
+<button onclick="next()">❤️</button>
+</div>
+
+<div class="slide">
+
+<div class="final">I LOVE YOU SOOO MUCHH 😍💗</div>
+
+<img src="photo.jpg">
+
+<p style="font-size:26px;">
+Thank you for being in my life 🤌🫠💗<br>
+Your smile means everything to me 🤍<br><br>
+
+I love you so much 🤍💗<br>
+And I am always with you 🤌😊💗
+</p>
+
+<div class="names">Jatin ❤️ Mnkuu</div>
+
+</div>
+
+<script>
+
+/* slides */
+
+let slides=document.querySelectorAll(".slide")
+let index=0
+
+function next(){
+slides[index].classList.remove("active")
+index++
+slides[index].classList.add("active")
+}
+
+/* typing animation */
+
+function typeText(el,text){
+let i=0
+let speed=30
+function type(){
+if(i<text.length){
+el.innerHTML+=text.charAt(i)
+i++
+setTimeout(type,speed)
+}
+}
+type()
+}
+
+/* messages */
+
+typeText(document.getElementById("t1"),
+`Dear sweetheart mnkuu 🤌😊💗
+
+I made this little link specially for you 🤌🫠💗
+
+just to make you feel a little better and take away your stress 🤍✨
+
+I know today was a little tough…
+but please don't be sad anymore 🤌🥺💗
+
+Click the heart below 🤌😊💗`)
+
+typeText(document.getElementById("t2"),
+`Hey mnkuu 🤌😊💗
+
+Paper thoda accha nahi gaya…
+to please itna stress mat lo 🤍
+
+Ek ya do papers se kisi ka future decide nahi hota.`)
+
+typeText(document.getElementById("t3"),
+`Tum already bahut mehnat karti ho
+aur mujhe pata hai tum kitni strong ho 💗✨
+
+So please relax a little…
+Everything will be okay 🤌🫠💗`)
+
+typeText(document.getElementById("t4"),
+`Mnkuu 🤌🫠💗
+
+Kabhi kabhi things plan ke according nahi hoti…
+
+Important ye hai ki tumne try kiya
+aur honestly mehnat bhi ki 💗`)
+
+typeText(document.getElementById("t5"),
+`Mujhe tum par bahut trust hai 💗
+
+Tum smart ho
+tum hardworking ho
+
+I truly believe in you 🤌😊💗`)
+
+typeText(document.getElementById("t6"),
+`Jo ho gaya usko yahin chhod dete hain 🤍
+
+Ab next papers ko full confidence ke saath dena ✨
+
+I love you so much 💗
+And I am always with you 🤌😊💗`)
+
+/* floating hearts */
+
+setInterval(()=>{
+let heart=document.createElement("div")
+heart.className="heart"
+heart.innerHTML="💗"
+heart.style.left=Math.random()*100+"vw"
+heart.style.fontSize=(20+Math.random()*20)+"px"
+document.body.appendChild(heart)
+
+setTimeout(()=>heart.remove(),6000)
+
+},500)
+
+/* heart explosion when page opens */
+
+for(let i=0;i<40;i++){
+let h=document.createElement("div")
+h.className="heart"
+h.innerHTML="💗"
+h.style.left=Math.random()*100+"vw"
+h.style.fontSize=(25+Math.random()*30)+"px"
+document.body.appendChild(h)
+}
+
+/* rose petals */
+
+setInterval(()=>{
+let petal=document.createElement("div")
+petal.className="petal"
+petal.innerHTML="🌹"
+petal.style.left=Math.random()*100+"vw"
+document.body.appendChild(petal)
+
+setTimeout(()=>petal.remove(),6000)
+
+},800)
+
+/* glitter */
+
+let canvas=document.getElementById("glitter")
+let ctx=canvas.getContext("2d")
+
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
+
+let particles=[]
+
+for(let i=0;i<80;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2
+})
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+ctx.fillStyle="white"
+
+particles.forEach(p=>{
+ctx.beginPath()
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2)
+ctx.fill()
+
+p.y+=0.3
+if(p.y>canvas.height)p.y=0
+})
+
+requestAnimationFrame(draw)
+}
+
+draw()
+
+</script>
+
+</body>
+</html>
